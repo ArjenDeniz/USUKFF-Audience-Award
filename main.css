@@ -181,11 +181,20 @@ form{
 @media screen and (max-width: 800px) {
     .background{
         justify-content: flex-end;
+        background-color: var(--background);
     }
     .formbox{
-        border-radius: 15px 15px 0 0;
+        border-radius: 25px 25px 0 0;
     }
-
+    .smallImage{
+        display:flex;
+        width: 100%;
+        flex-grow:1;
+        background-image: url('visuals/varda.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 /* star animations */
