@@ -5,11 +5,13 @@
     padding: 0;
     font-family: "Nunito", sans-serif;
 }
+
 :root{
     --primary:#7AA5AD;
     --secondary:#000;
     --primary-t: #808080;
     --background: #E2E3E7;
+    --bezier: cubic-bezier(0.42, 0, 0.58, 1);
     --trans-dur: 0.3s;
 }
 form{
@@ -34,7 +36,7 @@ form{
 }
 
 .background{
-    height: 100vh;
+    height: 100%;
     background-image: url('visuals/varda.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,6 +83,7 @@ form{
 .button:hover {
     background: var(--primary-t);
     transform: scale(0.95);
+    transition: var(--trans-dur);
 }
 
 .button:active {
@@ -95,9 +98,73 @@ form{
     font-size: 1rem;
     font-weight: 400;
 }
-.star{
+
+/*star ratings*/
+.starbox{
     margin: 0.5rem;
+    position: relative;
 }
+.star{
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+    width: 2rem;
+    height: 2rem;
+}
+.star-ring,
+.star-fill,
+.star-line,
+.star-stroke{
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.star-ring,
+.star-fill,
+.star-line{
+    stroke: var(--primary);
+}
+.star-fill{
+    fill: var(--primary);
+    transform: scale(0);
+    transition: 
+        fill var(--trans-dur) var(--bezier),
+        transform var(--trans-dur) var(--bezier);;
+}
+.star-line{
+    stroke-dasharray: 12 13;
+    stroke-dashoffset: -13;
+}
+.star-stroke{
+    stroke: var(--primary);
+    transition: stroke var(--trans-dur);
+}
+
+.starLabel{
+    font-size: 1rem;
+    font-weight: 500;
+    min-height: 1.25rem;
+    text-align: center;
+}
+
+/*star ratings end*/
+
+/*logo footer*/
+.logo{
+    width: 100%;
+    margin: 1rem 0;
+}
+.logoImg{
+    width: 15%;
+}
+.logoName{
+    font-size:0.7rem;
+    color: #552261;
+    font-weight: bold;
+    text-align: center;
+}
+
 .hide{
     display: none;
 }
@@ -113,17 +180,90 @@ form{
 
 @media screen and (max-width: 800px) {
     .background{
-        position: relative;
-        background-image: none;
+        justify-content: flex-end;
     }
     .formbox{
-        position: absolute;
-        bottom:0;
-        right:0;
         border-radius: 15px 15px 0 0;
     }
-    .smallImage{
-        display: flex;
-        height:100%;
+
+}
+
+/* star animations */
+
+@keyframes starRing {
+
+    from,
+    20% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        r: 8px;
+        stroke-width: 16px;
+        transform: scale(0);
+    }
+
+    35% {
+        animation-timing-function: ease-out;
+        opacity: 0.5;
+        r: 8px;
+        stroke-width: 16px;
+        transform: scale(1);
+    }
+
+    50%,
+    to {
+        opacity: 0;
+        r: 16px;
+        stroke-width: 0;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes starFill {
+
+    from,
+    40% {
+        animation-timing-function: ease-out;
+        transform: scale(0);
+    }
+
+    60% {
+        animation-timing-function: ease-in-out;
+        transform: scale(1.2);
+    }
+
+    80% {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes starStroke {
+    from {
+        transform: scale(1);
+    }
+
+    20%,
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes starLine {
+
+    from,
+    40% {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 1 23;
+        stroke-dashoffset: 1;
+    }
+
+    60%,
+    to {
+        stroke-dasharray: 12 13;
+        stroke-dashoffset: -13;
     }
 }
