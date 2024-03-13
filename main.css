@@ -6,9 +6,10 @@
     font-family: "Nunito", sans-serif;
 }
 :root{
-    --primary:#000;
-    --secondary:#fff;
+    --primary:#7AA5AD;
+    --secondary:#000;
     --primary-t: #808080;
+    --background: #E2E3E7;
     --trans-dur: 0.3s;
 }
 form{
@@ -34,27 +35,34 @@ form{
 
 .background{
     height: 100vh;
-    background-color: #000;
-    position: relative;
+    background-image: url('visuals/varda.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .formbox{
     max-width: 500px;
     background-color: #fff;
     padding: 1rem 0;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px;
+    background-color: var(--background);
     border:none;
 }
+.titlebox{
+    margin: 0.5rem;
+    padding: 0.1rem;
+}
 .line{
-    height: 2px;
+    height: 1px;
     background-color: var(--primary);
     width: 50%;
-    margin: 5px auto;
+    margin: 0.1rem auto;
 }
 .buttonbox{
-    position: relative;
+    margin: 0.5rem 0;
 }
 .button {
-    padding: 1rem;
+    padding: 0.5rem;
     margin-top: 1rem;
     border: none;
     border-radius: 20px;
@@ -80,14 +88,20 @@ form{
     color: var(--primary);
 }
 .title{
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 .director{
     font-size: 1rem;
     font-weight: 400;
 }
+.star{
+    margin: 0.5rem;
+}
 .hide{
+    display: none;
+}
+.smallImage{
     display: none;
 }
 #lottieAnimation{
@@ -100,10 +114,16 @@ form{
 @media screen and (max-width: 800px) {
     .background{
         position: relative;
+        background-image: none;
     }
     .formbox{
         position: absolute;
         bottom:0;
         right:0;
+        border-radius: 15px 15px 0 0;
+    }
+    .smallImage{
+        display: flex;
+        height:100%;
     }
 }
