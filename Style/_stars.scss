@@ -1,0 +1,155 @@
+@import "variables";
+.rating {
+    margin: auto;
+
+    &__display {
+        font-size: 1em;
+        font-weight: 500;
+        min-height: 1.25em;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__stars {
+        display: flex;
+        padding-bottom: 0.375em;
+        position: relative;
+    }
+
+    &__star {
+        display: block;
+        overflow: visible;
+        pointer-events: none;
+        width: 2em;
+        height: 2em;
+
+        &-ring,
+        &-fill,
+        &-line,
+        &-stroke {
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        &-ring,
+        &-fill,
+        &-line {
+            stroke: $yellow;
+        }
+
+        &-fill {
+            fill: $yellow;
+            transform: scale(0);
+            transition:
+                fill $trans-dur $bezier,
+                transform $trans-dur $bezier;
+        }
+
+        &-line {
+            stroke-dasharray: 12 13;
+            stroke-dashoffset: -13;
+        }
+
+        &-stroke {
+            stroke: $yellow;
+            transition: stroke $trans-dur;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        padding: 0.125em;
+    }
+
+    @for $s from 1 through 4 {
+
+        &__label--delay#{$s} &__star-ring,
+        &__label--delay#{$s} &__star-fill,
+        &__label--delay#{$s} &__star-line,
+        &__label--delay#{$s} &__star-stroke {
+            animation-delay: 0.05s * $s;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    // display
+    &__input:hover~[data-rating]:not([hidden]) {
+        display: none;
+    }
+
+    &__input-1:hover~[data-rating="1"][hidden],
+    &__input-2:hover~[data-rating="2"][hidden],
+    &__input-3:hover~[data-rating="3"][hidden],
+    &__input-4:hover~[data-rating="4"][hidden],
+    &__input-5:hover~[data-rating="5"][hidden],
+    &__input:checked:hover~[data-rating]:not([hidden]) {
+        display: block;
+    }
+
+    // stars
+    &__input-1:hover~&__label:first-of-type &__star-stroke,
+    &__input-2:hover~&__label:nth-of-type(-n + 2) &__star-stroke,
+    &__input-3:hover~&__label:nth-of-type(-n + 3) &__star-stroke,
+    &__input-4:hover~&__label:nth-of-type(-n + 4) &__star-stroke,
+    &__input-5:hover~&__label:nth-of-type(-n + 5) &__star-stroke {
+        stroke: $yellow;
+        transform: scale(1);
+    }
+
+    &__input-1:checked~&__label:first-of-type &__star-ring,
+    &__input-2:checked~&__label:nth-of-type(-n + 2) &__star-ring,
+    &__input-3:checked~&__label:nth-of-type(-n + 3) &__star-ring,
+    &__input-4:checked~&__label:nth-of-type(-n + 4) &__star-ring,
+    &__input-5:checked~&__label:nth-of-type(-n + 5) &__star-ring {
+        animation-name: starRing;
+    }
+
+    &__input-1:checked~&__label:first-of-type &__star-stroke,
+    &__input-2:checked~&__label:nth-of-type(-n + 2) &__star-stroke,
+    &__input-3:checked~&__label:nth-of-type(-n + 3) &__star-stroke,
+    &__input-4:checked~&__label:nth-of-type(-n + 4) &__star-stroke,
+    &__input-5:checked~&__label:nth-of-type(-n + 5) &__star-stroke {
+        animation-name: starStroke;
+    }
+
+    &__input-1:checked~&__label:first-of-type &__star-line,
+    &__input-2:checked~&__label:nth-of-type(-n + 2) &__star-line,
+    &__input-3:checked~&__label:nth-of-type(-n + 3) &__star-line,
+    &__input-4:checked~&__label:nth-of-type(-n + 4) &__star-line,
+    &__input-5:checked~&__label:nth-of-type(-n + 5) &__star-line {
+        animation-name: starLine;
+    }
+
+    &__input-1:checked~&__label:first-of-type &__star-fill,
+    &__input-2:checked~&__label:nth-of-type(-n + 2) &__star-fill,
+    &__input-3:checked~&__label:nth-of-type(-n + 3) &__star-fill,
+    &__input-4:checked~&__label:nth-of-type(-n + 4) &__star-fill,
+    &__input-5:checked~&__label:nth-of-type(-n + 5) &__star-fill {
+        animation-name: starFill;
+    }
+
+    &__input-1:not(:checked):hover~&__label:first-of-type &__star-fill,
+    &__input-2:not(:checked):hover~&__label:nth-of-type(2) &__star-fill,
+    &__input-3:not(:checked):hover~&__label:nth-of-type(3) &__star-fill,
+    &__input-4:not(:checked):hover~&__label:nth-of-type(4) &__star-fill,
+    &__input-5:not(:checked):hover~&__label:nth-of-type(5) &__star-fill {
+        fill: $yellow-t;
+    }
+
+    // screen reader text
+    &__sr {
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+    }
+}

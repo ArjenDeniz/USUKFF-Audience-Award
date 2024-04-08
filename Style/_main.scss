@@ -1,0 +1,128 @@
+
+* {
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Nunito", sans-serif;
+    }
+
+form {
+    width: 90%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Full height of the viewport */
+}
+
+.background {
+    height: 100%;
+    background-image: url('../visuals/varda.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.formbox {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 1rem 0;
+    border-radius: 15px;
+    background-color: $background;
+    border: none;
+}
+
+.titlebox {
+    margin: 0.5rem;
+    padding: 0.1rem;
+}
+
+.line {
+    height: 1px;
+    background-color: $primary;
+    width: 50%;
+    margin: 0.1rem auto;
+}
+
+.buttonbox {
+    margin: 0.5rem 0;
+}
+
+.button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 20px;
+    color: $secondary;
+    background: $primary;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    outline: 0;
+    bottom: 0;
+    transition: 0.2s;
+    width: 50%;
+    max-width: 350px;
+    font-size: 1rem;
+
+    &:hover {
+        background: $primary-t;
+        transform: scale(0.95);
+        transition: $trans-dur;
+    }
+
+    &:active {
+        background: $secondary;
+        color: $primary;
+    }
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.director {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/*logo footer*/
+.logo {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.logoImg {
+    width: 15%;
+}
+
+.logoName {
+    font-size: 0.7rem;
+    color: #552261;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.smallImage {
+    display: none;
+}
