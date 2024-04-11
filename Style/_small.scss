@@ -1,20 +1,26 @@
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 650px) {
     .background {
-        justify-content: flex-end;
-        background-color: var(--background);
+        background-image:none;
+        position: relative;
     }
 
     .formbox {
         border-radius: 25px 25px 0 0;
+        position: absolute;
+        bottom:0px;
     }
 
     .smallImage {
         display: flex;
         width: 100%;
         flex-grow: 1;
+        position: absolute;
+        top:0px;
+        height: 100%;
+        background-image: $background-image;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        background-size: auto 600px;
+        background-position: top;
     }
     .rating__star{
         width: 2rem;

@@ -3,9 +3,9 @@
     margin: auto;
 
     &__display {
-        font-size: 1rem;
-        font-weight: 500;
-        min-height: 1.25rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        min-height: 1.2rem;
         position: absolute;
         top: 100%;
         width: 100%;
@@ -14,7 +14,7 @@
 
     &__stars {
         display: flex;
-        padding-bottom: 0.375rem;
+        padding-bottom: 0.2rem;
         position: relative;
     }
 
@@ -37,11 +37,11 @@
         &-ring,
         &-fill,
         &-line {
-            stroke: $yellow;
+            stroke: $primary;
         }
 
         &-fill {
-            fill: $yellow;
+            fill: $primary;
             transform: scale(0);
             transition:
                 fill $trans-dur $bezier,
@@ -54,14 +54,14 @@
         }
 
         &-stroke {
-            stroke: $yellow;
+            stroke: $primary;
             transition: stroke $trans-dur;
         }
     }
 
     &__label {
         cursor: pointer;
-        padding: 0.125em;
+        padding: 0.25rem;
     }
 
     @for $s from 1 through 4 {
@@ -100,7 +100,7 @@
     &__input-3:hover~&__label:nth-of-type(-n + 3) &__star-stroke,
     &__input-4:hover~&__label:nth-of-type(-n + 4) &__star-stroke,
     &__input-5:hover~&__label:nth-of-type(-n + 5) &__star-stroke {
-        stroke: $yellow;
+        stroke: $primary;
         transform: scale(1);
     }
 
@@ -141,7 +141,7 @@
     &__input-3:not(:checked):hover~&__label:nth-of-type(3) &__star-fill,
     &__input-4:not(:checked):hover~&__label:nth-of-type(4) &__star-fill,
     &__input-5:not(:checked):hover~&__label:nth-of-type(5) &__star-fill {
-        fill: $yellow-t;
+        fill: $primary;
     }
 
     // screen reader text

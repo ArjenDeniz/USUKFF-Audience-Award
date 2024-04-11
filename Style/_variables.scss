@@ -1,9 +1,6 @@
 $primary: #7AA5AD;
-$secondary: #000;
-$primary-t: #808080;
+$primary-t: lighten($primary, 10%);
 $background: #E2E3E7;
 $bezier: cubic-bezier(0.42, 0, 0.58, 1);
 $trans-dur: 0.3s;
-$starHue: 189;
-$yellow: $primary;
-$yellow-t: #{hsla($starHue,90%,55%,0)}
+$background-image: url('../visuals/varda.jpeg');

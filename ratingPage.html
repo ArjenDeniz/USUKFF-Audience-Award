@@ -6,7 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>USUFF - Seyirci Ödülü</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../visuals/usuff_logo.png">
+    <meta name="description" content="This page is for USUFF audience to vote for audience award">
 </head>
 <body>
     <div class = "background column center">
@@ -17,10 +22,12 @@
                 <h1 class = "title row">The Beaches of Agnes Varda</h1>
                 <p class = "director row">by Agnes Varda</p>
             </div>
+
             <div class = "line row center"></div>
-            <div class="form rating column center">
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
-                    method="post" >
+
+            <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
+                method="post" >
+
                 <div class="rating__stars row center">
                     <input type="radio" name="entry.17473075" value="1" id="rating-1" class="rating__input rating__input-1">
                     <input type="radio" name="entry.17473075" value="2" id="rating-2" class="rating__input rating__input-2">
@@ -159,13 +166,18 @@
                     <p class="rating__display" data-rating="5" hidden>Süper!</p>
                 </div>
 
-                    <div class="buttonbox column center">
-                        <div class="hide" id="lottieAnimation"></div>
-                        <button type="submit" class="button" id="buttonOne">Gönder!</button>
-                    </div>
-                </form>
-            </div>
+                <div class="commentbox  center">
+                    <i class="fa-regular fa-circle-right icon"></i>
+                    <textarea class="comment" placeholder="Yorum yazmak için tıklayınız."></textarea>
+                </div>  
+
+                <div class="buttonbox column center">
+                    <button type="submit" class="button" id="buttonOne">Gönder!</button>
+                </div>
+            </form>
+
             <div class="line row center"></div>
+
             <div class = "logo center">
                 <img src="visuals/usuff_logo.png" class="logoImg" alt="Logo of">
                 <p class="logoName"> 27. Uçan Süpürge <br> Uluslararası Kadın Filmleri <br>Festivali</p>

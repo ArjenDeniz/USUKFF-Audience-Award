@@ -1,10 +1,10 @@
-
 * {
         border: 0;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         font-family: "Nunito", sans-serif;
+        font-size: 1rem;    
     }
 
 form {
@@ -31,98 +31,128 @@ form {
 
 .background {
     height: 100%;
-    background-image: url('../visuals/varda.jpeg');
+    background-image: $background-image;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+/*card with gray background*/
 .formbox {
-    max-width: 500px;
-    background-color: #fff;
-    padding: 1rem 0;
-    border-radius: 15px;
+    max-width: 650px;
+    padding: 1rem 0.1rem;
+    border-radius: 2rem;
     background-color: $background;
-    border: none;
 }
 
+/*title and director*/
 .titlebox {
     margin: 0.5rem;
     padding: 0.1rem;
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    .director {
+        font-weight: 500;
+    }
 }
 
 .line {
     height: 1px;
     background-color: $primary;
-    width: 50%;
-    margin: 0.1rem auto;
+    width: 75%;
+    margin: 0.3rem auto;
+    align-self: center;
 }
 
-.buttonbox {
-    margin: 0.5rem 0;
-}
-
-.button {
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border: none;
+/*comment box*/
+.commentbox {
+    margin-top: 2rem;
+    background-color: #fff;
+    border: solid;
+    border-color: $primary;
+    border-width: 1px;
     border-radius: 20px;
-    color: $secondary;
-    background: $primary;
-    text-transform: capitalize;
-    font-weight: bold;
-    cursor: pointer;
-    outline: 0;
-    bottom: 0;
-    transition: 0.2s;
-    width: 50%;
-    max-width: 350px;
-    font-size: 1rem;
+    width: 75%;
+    textarea {
+            height: 100%;
+    
+        &::placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+        }
+    .comment {
+        font-weight: 500;
+        padding-left: 0.2rem;
+        width: calc(100% - 0.2rem);
+        background: none;
+        resize: none;
 
-    &:hover {
-        background: $primary-t;
-        transform: scale(0.95);
-        transition: $trans-dur;
+        /* Prevent manual resizing */
+        &:focus {
+            height: 200px;
+        }
     }
 
-    &:active {
-        background: $secondary;
+    .icon {
+        margin-left: 0.5rem;
         color: $primary;
     }
 }
 
-.title {
-    font-size: 1.8rem;
-    font-weight: bold;
+/*button design*/
+.buttonbox {
+    margin: 0.8rem 0;
+    .button {
+        padding: 0.5rem;
+        border-radius: 20px;
+        background: $primary;
+        text-transform: capitalize;
+        font-weight: 700;
+        outline: 0;
+        bottom: 0;
+        transition: 0.2s;
+        width: 50%;
+        max-width: 350px;
+
+        &:hover, &:active {
+            background: $primary-t;
+            transform: scale(1.05);
+            transition: $trans-dur;
+        }
+
+
+    }
 }
 
-.director {
-    font-size: 1rem;
-    font-weight: 400;
-}
+
+
 
 
 /*logo footer*/
 .logo {
-    width: 100%;
+    width: 75%;
     margin: 1rem 0;
+    .logoImg {
+        width: 15%;
+    }
+
+    .logoName {
+        font-size: 0.6rem;
+        color: #552261;
+        font-weight: bold;
+        text-align: center;
+    }
 }
 
-.logoImg {
-    width: 15%;
-}
 
-.logoName {
-    font-size: 0.7rem;
-    color: #552261;
-    font-weight: bold;
-    text-align: center;
-}
 
-.hide {
-    display: none;
-}
-
+/*background image trick for small screens*/
 .smallImage {
     display: none;
 }
