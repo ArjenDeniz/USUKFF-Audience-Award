@@ -176,9 +176,9 @@ form {
   margin: auto; }
   /* line 5, _stars.scss */
   .rating__display {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 500;
-    min-height: 1.25em;
+    min-height: 1.25rem;
     position: absolute;
     top: 100%;
     width: 100%;
@@ -186,15 +186,15 @@ form {
   /* line 15, _stars.scss */
   .rating__stars {
     display: flex;
-    padding-bottom: 0.375em;
+    padding-bottom: 0.375rem;
     position: relative; }
   /* line 21, _stars.scss */
   .rating__star {
     display: block;
     overflow: visible;
     pointer-events: none;
-    width: 2em;
-    height: 2em; }
+    width: 3rem;
+    height: 3rem; }
     /* line 28, _stars.scss */
     .rating__star-ring, .rating__star-fill, .rating__star-line, .rating__star-stroke {
       animation-duration: 1s;
@@ -285,9 +285,12 @@ form {
     display: flex;
     width: 100%;
     flex-grow: 1;
-    background-image: url("../visuals/varda.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; } }
+    background-position: center; }
+
+  /* line 19, _small.scss */
+  .rating__star {
+    width: 2rem; } }
 
 /*# sourceMappingURL=new.css.map */
