@@ -63,13 +63,14 @@ form {
     height: 1px;
     background-color: $primary;
     width: 75%;
-    margin: 0.3rem auto;
+    margin: 0.75rem auto;
     align-self: center;
 }
 
 /*comment box*/
 .commentbox {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
     background-color: #fff;
     border: solid;
     border-color: $primary;

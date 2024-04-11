@@ -52,12 +52,13 @@ form {
   height: 1px;
   background-color: #7AA5AD;
   width: 75%;
-  margin: 0.3rem auto;
+  margin: 0.75rem auto;
   align-self: center; }
 
 /*comment box*/
 .commentbox {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
   background-color: #fff;
   border: solid;
   border-color: #7AA5AD;
@@ -259,12 +260,12 @@ form {
     position: absolute;
     top: 0px;
     height: 100%;
-    background-image: url("../visuals/varda.jpeg");
+    background-image: url("../visuals/varda2.jpeg");
     background-repeat: no-repeat;
-    background-size: auto 600px;
+    background-size: auto 500px;
     background-position: top; }
 
   .rating__star {
-    width: 2rem; } }
+    width: 2.5rem; } }
 
 /*# sourceMappingURL=new.css.map */
