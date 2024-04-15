@@ -1,17 +1,24 @@
-@media screen and (max-width: 650px) {
-    *{
-        font-size: 1rem;
-    }
+@media screen and (max-width: 600px) {
+
+
     .background {
         background-image:none;
         position: relative;
     }
 
     .formbox {
-        border-radius: 40px 40px 0 0;
+        border-radius: 50px 50px 0 0;
         position: absolute;
-        bottom:0px;
+        bottom:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height:auto;
+        max-width: 100%;
     }
+    // .line {
+    //     margin: 0 auto;
+    // }
 
     .smallImage {
         display: flex;
@@ -22,10 +29,22 @@
         height: 100%;
         background-image: $background-image;
         background-repeat: no-repeat;
-        background-size: auto 505px;
+        background-size: auto 500px;
         background-position: top;
     }
+
     .rating__star{
         width: 2.5rem;
+    }
+    .commentbox{
+        .comment{
+            transition: height 0.01s ease;
+        }
+    }
+    .commentbox:focus-within{
+        min-height: 400px;
+    }
+    .comment:focus{
+        height: 400px !important;
     }
 }

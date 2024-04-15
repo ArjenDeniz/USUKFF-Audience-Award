@@ -1,0 +1,41 @@
+@media screen and (max-width: 400px) {
+
+    .formbox{
+        border-radius: 25px 25px 0 0;
+        padding: 3% 0.1rem;
+    }
+    .rating__star{
+        width:2rem;
+    }
+
+    .commentbox{
+        margin-top: 0.7rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .rating__display{
+        top: 75%;
+    }
+
+    .commentbox{
+        .comment{
+            &::placeholder{
+                font-size: 0.9rem;
+            }
+        }
+
+    }
+    .smallImage{
+        background-size: auto 550px;
+    }
+}
+@media screen and (max-width: 330px) {
+    .commentbox {
+            .comment {
+                &::placeholder {
+                    top:15%;
+                }
+            }
+
+        }
+    }
