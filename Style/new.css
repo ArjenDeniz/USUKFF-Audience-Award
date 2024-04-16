@@ -51,7 +51,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2rem; }
 
 form {
@@ -69,8 +69,7 @@ form {
 .column {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  /* Full height of the viewport */ }
+  width: 100%; }
 
 .background {
   height: 100%;
@@ -92,7 +91,8 @@ form {
   padding: 1%; }
   .titlebox .title {
     font-size: 1.5rem;
-    font-weight: 400; }
+    font-weight: 400;
+    text-align: center; }
   .titlebox .director {
     font-weight: 300; }
 
@@ -179,7 +179,6 @@ form {
 .rating {
   margin: auto; }
   .rating__display {
-    font-size: 1.2rem;
     font-weight: 400;
     min-height: 1.2rem;
     position: absolute;
@@ -253,6 +252,9 @@ form {
     height: 1px; }
 
 @media screen and (max-width: 600px) {
+  * {
+    font-size: 1.1rem; }
+
   .background {
     background-image: none;
     position: relative; }
@@ -266,6 +268,9 @@ form {
     width: 100%;
     height: auto;
     max-width: 100%; }
+
+  .commentbox .comment::placeholder {
+    top: 1%; }
 
   .smallImage {
     display: flex;

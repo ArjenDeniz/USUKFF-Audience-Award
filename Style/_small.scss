@@ -1,6 +1,8 @@
 @media screen and (max-width: 600px) {
 
-
+    *{
+        font-size: 1.1rem;
+    }
     .background {
         background-image:none;
         position: relative;
@@ -16,9 +18,13 @@
         height:auto;
         max-width: 100%;
     }
-    // .line {
-    //     margin: 0 auto;
-    // }
+    .commentbox {
+        .comment {
+            &::placeholder {
+                top: 1%;
+            }
+        }
+    }
 
     .smallImage {
         display: flex;

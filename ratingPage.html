@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="Style/new.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>USUKFF - Seyirci Ödülü</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../visuals/usuff_logo.png">
-    <meta name="description" content="This page is for USUFF audience to vote for audience award">
+    <link rel="icon" type="image/png" sizes="32x32" href="visuals/usukff_logo.png">
+    <meta name="description" content="This page is for USKUFF audience to vote for audience award">
 </head>
 <body>
     <div class = "background column center">
@@ -24,15 +26,17 @@
             <!-- title and director-->
             <div class = "titlebox column center">
                 <h1 class = "title row">The Beaches of Agnes Varda</h1>
-                <p class = "director row">by Agnes Varda</p>
+                <p class = "director row">Agnes Varda</p>
             </div>
 
             <!-- line -->
             <div class = "line row center"></div>
 
             <!--form-->
+            <script type="text/javascript">var submitted = false;</script>
+            <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='confirmationPage.html';}"></iframe>
             <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
-                method="post" >
+                method="post" target="hiddenConfirm" onsubmit="submitted=true;">
 
                 <!-- stars -->
                 <div class="rating__stars row center">
@@ -190,7 +194,7 @@
 
             <!--logo section-->
             <div class = "logo center">
-                <img src="visuals/usuff_logo.png" class="logoImg" alt="Logo of">
+                <img src="visuals/usukff_logo.png" class="logoImg" alt="Logo of USUKFF">
                 <p class="logoName"> 27. Uçan Süpürge <br> Uluslararası Kadın Filmleri <br>Festivali</p>
             </div>
         </div>
