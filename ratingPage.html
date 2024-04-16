@@ -177,7 +177,7 @@
             <!-- comment section-->
             <section class="commentbox center">
                 <i class="fa-regular fa-circle-right icon"></i>
-                <textarea class="comment" placeholder="Yorum yazmak için tıklayınız." name="entry.1641342647"></textarea>
+                <textarea class="comment" id="textArea" placeholder="Yorum yazmak için tıklayınız." name="entry.1641342647"></textarea>
             </section>
 
             <!-- button -->
@@ -258,5 +258,8 @@
                 });
             }
         }
+    window.onhashchange = function () {
+            document.getElementById("textArea").blur();
+    }
 </script>
 </html>
