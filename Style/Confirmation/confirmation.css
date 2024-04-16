@@ -1,3 +1,4 @@
+/* general settings */
 * {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
@@ -29,6 +30,7 @@ body {
   margin-top: 10px;
   background-color: #E2E3E7; }
 
+/* figure settings */
 .figureContainer {
   height: 50%;
   width: 100%;
@@ -50,6 +52,7 @@ body {
   overflow: hidden;
   object-fit: cover; }
 
+/* text settings */
 .container {
   width: 100%;
   display: flex;
@@ -61,6 +64,9 @@ body {
   margin: 0px 10px;
   display: flex;
   height: 10%; }
+
+.textbox {
+  text-align: center; }
 
 .big {
   font-size: 1.8rem;
@@ -90,7 +96,7 @@ body {
 .logoImg {
   width: 15%;
   height: 100%; }
-  .logoImg img {
+  .logoImg .logoUS {
     width: 100%;
     height: auto; }
 

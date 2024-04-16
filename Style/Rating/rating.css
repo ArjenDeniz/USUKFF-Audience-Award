@@ -46,13 +46,15 @@
     to {
     stroke-dasharray: 12 13;
     stroke-dashoffset: -13; } }
+/* general settings */
 * {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  font-weight: 300; }
 
 form {
   width: 90%; }
@@ -73,7 +75,7 @@ form {
 
 .background {
   height: 100%;
-  background-image: url("../visuals/varda.jpeg");
+  background-image: url("../../visuals/varda.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
@@ -88,13 +90,11 @@ form {
 /*title and director*/
 .titlebox {
   margin: 2%;
-  padding: 1%; }
+  padding: 1%;
+  text-align: center; }
   .titlebox .title {
     font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center; }
-  .titlebox .director {
-    font-weight: 300; }
+    font-weight: 400; }
 
 .line {
   height: 1px;
@@ -110,7 +110,6 @@ form {
   .commentbox .comment {
     background-color: #fff;
     padding-left: 0.5rem;
-    font-weight: 300;
     border: 1px solid #7AA5AD;
     border-radius: 20px;
     width: 100%;
@@ -125,8 +124,7 @@ form {
       position: absolute;
       top: 25%;
       left: 0%;
-      padding: 0 0.5rem;
-      font-weight: 300; }
+      padding: 0 0.5rem; }
     .commentbox .comment:focus {
       height: 300px; }
       .commentbox .comment:focus::placeholder {
@@ -169,7 +167,6 @@ form {
   .logo .logoName {
     font-size: 0.6rem;
     color: #552261;
-    font-weight: 400;
     text-align: center; }
 
 /*background image trick for small screens*/
@@ -272,6 +269,9 @@ form {
   .commentbox .comment::placeholder {
     top: 1%; }
 
+  .line {
+    margin: 0 auto; }
+
   .smallImage {
     display: flex;
     width: 100%;
@@ -279,7 +279,7 @@ form {
     position: absolute;
     top: 0px;
     height: 100%;
-    background-image: url("../visuals/varda.jpeg");
+    background-image: url("../../visuals/varda.jpeg");
     background-repeat: no-repeat;
     background-size: auto 500px;
     background-position: top; }
@@ -319,4 +319,4 @@ form {
   .commentbox .comment::placeholder {
     top: 15%; } }
 
-/*# sourceMappingURL=new.css.map */
+/*# sourceMappingURL=rating.css.map */
