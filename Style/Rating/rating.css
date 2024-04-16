@@ -266,8 +266,20 @@ form {
     height: auto;
     max-width: 100%; }
 
+  .titlebox .title {
+    font-size: 1.4rem; }
+
   .commentbox .comment::placeholder {
     top: 1%; }
+
+  .commentbox .comment {
+    transition: height 0.01s ease; }
+
+  .commentbox:focus-within {
+    min-height: 400px; }
+
+  .comment:focus {
+    height: 400px !important; }
 
   .line {
     margin: 0 auto; }
@@ -287,25 +299,18 @@ form {
   .rating__star {
     width: 2.5rem; }
 
-  .commentbox .comment {
-    transition: height 0.01s ease; }
-
-  .commentbox:focus-within {
-    min-height: 400px; }
-
-  .comment:focus {
-    height: 400px !important; } }
+  .logo {
+    margin: 1% 0; } }
 @media screen and (max-width: 400px) {
   .formbox {
-    border-radius: 25px 25px 0 0;
-    padding: 3% 0.1rem; }
+    border-radius: 30px 30px 0 0;
+    padding: 2% 0.1rem; }
 
   .rating__star {
     width: 2rem; }
 
   .commentbox {
-    margin-top: 0.7rem;
-    margin-bottom: 0.3rem; }
+    margin-top: 0.7rem; }
 
   .rating__display {
     top: 75%; }
@@ -317,6 +322,6 @@ form {
     background-size: auto 550px; } }
 @media screen and (max-width: 330px) {
   .commentbox .comment::placeholder {
-    top: 15%; } }
+    top: 10%; } }
 
 /*# sourceMappingURL=rating.css.map */

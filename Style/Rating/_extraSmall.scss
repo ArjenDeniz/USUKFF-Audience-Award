@@ -1,16 +1,15 @@
 @media screen and (max-width: 400px) {
 
     .formbox{
-        border-radius: 25px 25px 0 0;
-        padding: 3% 0.1rem;
+        border-radius: 30px 30px 0 0;
+        padding: 2% 0.1rem;
     }
     .rating__star{
-        width:2rem;
+        width: 2rem;
     }
 
     .commentbox{
         margin-top: 0.7rem;
-        margin-bottom: 0.3rem;
     }
 
     .rating__display{
@@ -35,7 +34,7 @@
     .commentbox {
             .comment {
                 &::placeholder {
-                    top:15%;
+                    top:10%;
                 }
             }
 

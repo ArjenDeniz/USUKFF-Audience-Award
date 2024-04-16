@@ -18,6 +18,11 @@
         height:auto;
         max-width: 100%;
     }
+    .titlebox{
+        .title{
+            font-size: 1.4rem;
+        }
+    }
     .commentbox {
         .comment {
             &::placeholder {
@@ -25,7 +30,19 @@
             }
         }
     }
+    .commentbox {
+        .comment {
+            transition: height 0.01s ease;
+        }
+    }
 
+    .commentbox:focus-within {
+        min-height: 400px;
+    }
+
+    .comment:focus {
+        height: 400px !important;
+    }
     .line {
         margin: 0 auto;
     }
@@ -45,15 +62,8 @@
     .rating__star{
         width: 2.5rem;
     }
-    .commentbox{
-        .comment{
-            transition: height 0.01s ease;
-        }
+    .logo{
+        margin: 1% 0;
     }
-    .commentbox:focus-within{
-        min-height: 400px;
-    }
-    .comment:focus{
-        height: 400px !important;
-    }
+
 }
