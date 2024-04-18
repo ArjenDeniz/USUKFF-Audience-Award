@@ -15,14 +15,16 @@
 </head>
 
 <body class = "background column center">
-    <div class="smallImage row"></div>
+
+    <div class="smallImage row">
+    </div>
 
     <!-- form box-->
     <article class = "formbox column center">
 
         <!-- title and director-->
         <section class = "titlebox column center">
-            <h1 class = "title row">The Beaches of Agnes Varda</h1>
+            <h1 class = "title row">Agnes'in Plajları</h1>
             <p class = "director row">Agnes Varda</p>
         </section>
 
@@ -31,7 +33,7 @@
 
         <!--form-->
         <script type="text/javascript">var submitted = false;</script>
-        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='confirmationPage.html';}"></iframe>
+        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='confirmationPageTr.html';}"></iframe>
         <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
             method="post" target="hiddenConfirm" onsubmit="submitted=true;">
 
@@ -193,6 +195,12 @@
         <section class = "logo center">
             <img src="visuals/usukff_logo.png" class="logoImg" alt="Logo of USUKFF">
             <p class="logoName"> 27. Uçan Süpürge <br> Uluslararası Kadın Filmleri <br>Festivali</p>
+            <a href="ratingPageEn" onclick="changeLanguage('en')">
+                <section class="langbox center">
+                    <img src="visuals/english_flag.png" width="24px" alt="English Flag">
+                    <p class="lang">En</p>
+                </section>
+            </a>
         </section>
 
     </article>

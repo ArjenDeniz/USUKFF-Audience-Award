@@ -56,6 +56,11 @@
   font-size: 1.2rem;
   font-weight: 300; }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; }
+
 form {
   width: 90%; }
 
@@ -161,13 +166,23 @@ form {
 /*logo footer*/
 .logo {
   width: 75%;
-  margin: 3% 0; }
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-around;
+  /*language option*/ }
   .logo .logoImg {
     width: 15%; }
   .logo .logoName {
     font-size: 0.6rem;
     color: #552261;
     text-align: center; }
+  .logo .langbox {
+    padding: 0.2rem;
+    background-color: #7AA5AD;
+    border-radius: 10px;
+    gap: 3px; }
+  .logo .lang {
+    font-size: 1rem; }
 
 /*background image trick for small screens*/
 .smallImage {
@@ -294,7 +309,8 @@ form {
     background-image: url("../../visuals/varda.jpeg");
     background-repeat: no-repeat;
     background-size: auto 500px;
-    background-position: top; }
+    background-position: top;
+    justify-content: right; }
 
   .rating__star {
     width: 2.5rem; }
