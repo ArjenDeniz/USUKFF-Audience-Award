@@ -12,9 +12,48 @@
     <title>USUKFF - Seyirci Ödülü</title>
     <link rel="icon" type="image/png" sizes="32x32" href="visuals/usukff_logo.png">
     <meta name="description" content="This page is for USKUFF audience to vote for audience award">
+    <script>
+        var submitted = false;
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+        function submitForm() {
+            if (document.cookie.indexOf("cookie") !== -1) {
+                event.preventDefault();
+                alert("You already voted!");
+                setTimeout(function () {
+                    eraseCookie("cookie");
+                }, 3600000)
+            } else {
+                createCookie("cookie", "true", 1);
+                submitted = true;
+            }
+        }
+    </script>
 </head>
 
-<body class = "background column center">
+<body onload="readCookie(submitted)" class = "background column center">
     
     
     <div class="smallImage row">
@@ -34,10 +73,9 @@
         <div class = "line row center"></div>
 
         <!--form-->
-        <script type="text/javascript">var submitted = false;</script>
         <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='confirmationPageEn.html';}"></iframe>
         <form class="form column center" id="responseForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
-            method="post" target="hiddenConfirm" onsubmit="submitted=true;">
+            method="post" target="hiddenConfirm" onsubmit="submitForm()">
 
             <!-- stars -->
             <section class="rating__stars row center">
@@ -188,7 +226,6 @@
             <section class="buttonbox column center">
                 <button type="submit" class="button" id="buttonOne">Submit</button>
             </section>
-            <div id="toast" class="toast">Some message</div>
         </form>
 
         <!-- line -->
@@ -207,40 +244,7 @@
         </section>
     </article>
 
-    <script>
-        // function generateToken() {
-        //         return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-            //     }
-        function showToast(message, isError = false) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            if (isError) {
-                feedback.style.backgroundColor = 'red'; // Error message in red
-            } else {
-                feedback.style.backgroundColor = 'green'; // Success message in green
-            }
-            toast.className = "toast show";
 
-            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
-        }
-
-        document.getElementById('responseForm').addEventListener('submit', function (event) {
-
-                // Check if a token already exists
-                if (localStorage.getItem('formSubmitted')) {
-                    showToast('You have already submitted the form.',true);
-                    event.preventDefault()
-                    return;
-                }
-
-                // Store a token in localStorage
-                localStorage.setItem('formSubmitted', 'true');
-                showToast('Form submitted successfully!');
-            });
-        
-
-
-    </script>
 </body>
 <script async>
     window.addEventListener("DOMContentLoaded", () => {
@@ -303,8 +307,5 @@
                 });
             }
         }
-    // window.onhashchange = function () {
-    //         document.getElementById("textArea").blur();
-    // }
 </script>
 </html>

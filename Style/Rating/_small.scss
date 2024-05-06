@@ -38,11 +38,11 @@
         height: auto;
     }
     .commentbox:focus-within {
-        min-height: 400px;
+        min-height: 300px;
     }
 
     .comment:focus {
-        height: 400px !important;
+        height: 300px !important;
     }
     .line {
         margin: 0 auto;
