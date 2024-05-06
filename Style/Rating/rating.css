@@ -303,17 +303,16 @@ form {
 
   .background {
     background-image: none;
-    position: relative; }
+    display: flex; }
 
   .formbox {
     border-radius: 50px 50px 0 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: auto;
-    max-width: 100%; }
+    height: 50%;
+    z-index: 2;
+    max-width: 100%;
+    margin-top: -40px;
+    justify-self: flex-end; }
 
   .titlebox .title {
     font-size: 1.4rem; }
@@ -323,6 +322,9 @@ form {
 
   .commentbox .comment {
     transition: height 0.01s ease; }
+
+  .formbox:focus-within {
+    height: auto; }
 
   .commentbox:focus-within {
     min-height: 400px; }
@@ -337,14 +339,10 @@ form {
     display: flex;
     width: 100%;
     flex-grow: 1;
-    position: absolute;
-    top: 0px;
-    height: 100%;
+    height: 50%;
     background-image: url("../../visuals/varda.jpeg");
-    background-repeat: no-repeat;
-    background-size: auto 500px;
-    background-position: top;
-    justify-content: right; }
+    background-position: center;
+    background-size: cover; }
 
   .rating__star {
     width: 2.5rem; }
@@ -366,10 +364,7 @@ form {
     top: 75%; }
 
   .commentbox .comment::placeholder {
-    font-size: 0.9rem; }
-
-  .smallImage {
-    background-size: auto 550px; } }
+    font-size: 0.9rem; } }
 @media screen and (max-width: 330px) {
   .commentbox .comment::placeholder {
     top: 10%; } }
