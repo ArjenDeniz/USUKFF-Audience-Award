@@ -3,31 +3,38 @@
     .formbox{
         border-radius: 30px 30px 0 0;
         padding: 2% 0.1rem;
-        height: 60%;
+        max-height: 60%;
+        margin-top: -30px;
     }
     .rating__star{
         width: 2rem;
     }
 
     .titlebox {
+        margin: 0px;
         .title {
             font-size: 1.2rem;
+        }
+        .director {
+            font-size: 0.9rem;
         }
     }
     .commentbox{
         margin-top: 0.4rem;
     }
 
-    .rating__display{
-        top: 75%;
-    }
 
     .commentbox{
+        max-height: 30px;
         .comment{
             &::placeholder{
-                font-size: 0.9rem;
+                font-size: 0.7rem;
             }
         }
+    }
+
+    .rating__display{
+        font-size: 0.9rem;
     }
 }
 

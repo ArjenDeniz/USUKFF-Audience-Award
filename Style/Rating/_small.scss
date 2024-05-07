@@ -11,7 +11,7 @@
     .formbox {
         border-radius: 50px 50px 0 0;
         width: 100%;
-        height: 50%;
+        max-height: 50%;
         z-index: 2;
         max-width: 100%;
         margin-top: -40px;
@@ -25,17 +25,20 @@
     .commentbox {
         .comment {
             &::placeholder {
-                top: 1%;
+                font-size: 0.9rem;
             }
         }
     }
     .commentbox {
+        max-height: 50px;
+        margin-top: 5%;
         .comment {
             transition: height 0.01s ease;
         }
     }
     .formbox:focus-within{
         height: auto;
+        max-height: 100%;
     }
     .commentbox:focus-within {
         min-height: 300px;
@@ -45,7 +48,8 @@
         height: 300px !important;
     }
     .line {
-        margin: 0 auto;
+        margin: 0.1rem auto;
+        min-height: 1px;
     }
     .smallImage {
         display: flex;
@@ -63,5 +67,15 @@
     .logo{
         margin: 1% 0;
     }
+    .buttonbox {
+        margin: 0.5rem 0;
 
+        .button {
+            font-size: 0.9rem;
+            padding: 0.25rem;
+        }
+    }
+    .rating__display {
+        top: 75%;
+    }
 }
