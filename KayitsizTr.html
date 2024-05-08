@@ -2,14 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/Rating/rating.css">
+    <link rel="stylesheet" href="Style/Rating/ratingKayitsiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" async />
-    <title>USUKFF - Audience Award</title>
+    <title>USUKFF - Seyirci Ödülü</title>
     <link rel="icon" type="image/png" sizes="32x32" href="visuals/usukff_logo.png">
     <meta name="description" content="This page is for USKUFF audience to vote for audience award">
     <script>
@@ -39,25 +39,25 @@
             createCookie(name, "", -1);
         }
         function submitForm() {
-            if (document.cookie.indexOf("cookie") !== -1) {
-                event.preventDefault();
-                alert("You already voted!");
-                setTimeout(function () {
-                    eraseCookie("cookie");
-                }, 3600000)
-            } else {
-                createCookie("cookie", "true", 1);
-                submitted = true;
+                if (document.cookie.indexOf("cookie") !== -1) {
+                    event.preventDefault();
+                    alert("Daha önce oy kullandınız.");
+                    setTimeout(function(){
+                        eraseCookie("cookie");
+                    },3600000)
+                } else {
+                    createCookie("cookie", "true", 1);
+                    submitted = true;
+                    // Submit the form
+                    // ...
+                }
             }
-        }
     </script>
 </head>
 
 <body onload="readCookie(submitted)" class = "background column center">
-    
-    
-    <div class="smallImage row">
 
+    <div class="smallImage row">
     </div>
 
     <!-- form box-->
@@ -65,7 +65,7 @@
 
         <!-- title and director-->
         <section class = "titlebox column center">
-            <h1 class = "title row">The Beaches of Agnes Varda</h1>
+            <h1 class = "title row">Agnes'in Plajları</h1>
             <p class = "director row">Agnes Varda</p>
         </section>
 
@@ -73,8 +73,8 @@
         <div class = "line row center"></div>
 
         <!--form-->
-        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='confirmationPageEn.html';}"></iframe>
-        <form class="form column center" id="responseForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
+        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='KayitsizTrConf.html';}"></iframe>
+        <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
             method="post" target="hiddenConfirm" onsubmit="submitForm()">
 
             <!-- stars -->
@@ -209,22 +209,22 @@
                     </svg>
                     <span class="rating__sr">5 stars—Excellent</span>
                 </label>
-                <p class="rating__display" data-rating="1" hidden>Yikes!</p>
-                <p class="rating__display" data-rating="2" hidden>Okayish</p>
-                <p class="rating__display" data-rating="3" hidden>Average</p>
-                <p class="rating__display" data-rating="4" hidden>Good</p>
-                <p class="rating__display" data-rating="5" hidden>Amazing!</p>
+                <p class="rating__display" data-rating="1" hidden>Tüh</p>
+                <p class="rating__display" data-rating="2" hidden>Eh işte</p>
+                <p class="rating__display" data-rating="3" hidden>Ortalama</p>
+                <p class="rating__display" data-rating="4" hidden>Güzel</p>
+                <p class="rating__display" data-rating="5" hidden>Süper!</p>
             </section>
 
             <!-- comment section-->
             <section class="commentbox center">
                 <i class="fa-regular fa-circle-right icon"></i>
-                <textarea class="comment" id="textArea" placeholder="Click to write your comments." name="entry.1641342647"></textarea>
+                <textarea class="comment" id="textArea" placeholder="Yorum yazmak için tıklayınız." name="entry.1641342647"></textarea>
             </section>
 
             <!-- button -->
             <section class="buttonbox column center">
-                <button type="submit" class="button" id="buttonOne">Submit</button>
+                <button type="submit" class="button" id="buttonOne">Gönder!</button>
             </section>
         </form>
 
@@ -234,17 +234,16 @@
         <!--logo section-->
         <section class = "logo center">
             <img src="visuals/usukff_logo.png" class="logoImg" alt="Logo of USUKFF">
-            <p class="logoName">27. Flying Broom<br>International Women's<br>Film Festival</p>
-            <a href="ratingPageTr" onclick="changeLanguage('tr')">
-            <section class="langbox center">
-                <img src="visuals/turkish_flag.jpeg" width="24px" alt="Turkish Flag">
-                <p class="lang">Tr</p>
-            </section>
+            <p class="logoName"> 27. Uçan Süpürge <br> Uluslararası Kadın Filmleri <br>Festivali</p>
+            <a href="KayitsizEn" onclick="changeLanguage('en')">
+                <section class="langbox center">
+                    <img src="visuals/english_flag.png" width="24px" alt="English Flag">
+                    <p class="lang">En</p>
+                </section>
             </a>
         </section>
+
     </article>
-
-
 </body>
 <script async>
     window.addEventListener("DOMContentLoaded", () => {
@@ -307,5 +306,8 @@
                 });
             }
         }
+    window.onhashchange = function () {
+            document.getElementById("textArea").blur();
+    }
 </script>
 </html>
