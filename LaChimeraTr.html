@@ -1,0 +1,313 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/Rating/ratingLaChimera.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" async />
+    <title>USUKFF - Seyirci Ödülü</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="visuals/usukff_logo.png">
+    <meta name="description" content="This page is for USKUFF audience to vote for audience award">
+    <script>
+        var submitted = false;
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+        function submitForm() {
+                if (document.cookie.indexOf("cookie") !== -1) {
+                    event.preventDefault();
+                    alert("Daha önce oy kullandınız.");
+                    setTimeout(function(){
+                        eraseCookie("cookie");
+                    },3600000)
+                } else {
+                    createCookie("cookie", "true", 1);
+                    submitted = true;
+                    // Submit the form
+                    // ...
+                }
+            }
+    </script>
+</head>
+
+<body onload="readCookie(submitted)" class = "background column center">
+
+    <div class="smallImage row">
+    </div>
+
+    <!-- form box-->
+    <article class = "formbox column center">
+
+        <!-- title and director-->
+        <section class = "titlebox column center">
+            <h1 class = "title row">Agnes'in Plajları</h1>
+            <p class = "director row">Agnes Varda</p>
+        </section>
+
+        <!-- line -->
+        <div class = "line row center"></div>
+
+        <!--form-->
+        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='LaChimeraTrConf.html';}"></iframe>
+        <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
+            method="post" target="hiddenConfirm" onsubmit="submitForm()">
+
+            <!-- stars -->
+            <section class="rating__stars row center">
+                <input type="radio" name="entry.17473075" value="1" id="rating-1" class="rating__input rating__input-1">
+                <input type="radio" name="entry.17473075" value="2" id="rating-2" class="rating__input rating__input-2">
+                <input type="radio" name="entry.17473075" value="3" id="rating-3" class="rating__input rating__input-3">
+                <input type="radio" name="entry.17473075" value="4" id="rating-4" class="rating__input rating__input-4">
+                <input type="radio" name="entry.17473075" value="5" id="rating-5" class="rating__input rating__input-5">
+                <label class="rating__label" for="rating-1">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="none" />
+                                <polygon class="rating__star-fill"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">1 star—Terrible</span>
+                </label>
+                <label class="rating__label" for="rating-2">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="none" />
+                                <polygon class="rating__star-fill"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">2 stars—Bad</span>
+                </label>
+                <label class="rating__label" for="rating-3">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="none" />
+                                <polygon class="rating__star-fill"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">3 stars—OK</span>
+                </label>
+                <label class="rating__label" for="rating-4">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="none" />
+                                <polygon class="rating__star-fill"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">4 stars—Good</span>
+                </label>
+                <label class="rating__label" for="rating-5">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="none" />
+                                <polygon class="rating__star-fill"
+                                    points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07"
+                                    fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">5 stars—Excellent</span>
+                </label>
+                <p class="rating__display" data-rating="1" hidden>Tüh</p>
+                <p class="rating__display" data-rating="2" hidden>Eh işte</p>
+                <p class="rating__display" data-rating="3" hidden>Ortalama</p>
+                <p class="rating__display" data-rating="4" hidden>Güzel</p>
+                <p class="rating__display" data-rating="5" hidden>Süper!</p>
+            </section>
+
+            <!-- comment section-->
+            <section class="commentbox center">
+                <i class="fa-regular fa-circle-right icon"></i>
+                <textarea class="comment" id="textArea" placeholder="Yorum yazmak için tıklayınız." name="entry.1641342647"></textarea>
+            </section>
+
+            <!-- button -->
+            <section class="buttonbox column center">
+                <button type="submit" class="button" id="buttonOne">Gönder!</button>
+            </section>
+        </form>
+
+        <!-- line -->
+        <div class="line row center"></div>
+
+        <!--logo section-->
+        <section class = "logo center">
+            <img src="visuals/usukff_logo.png" class="logoImg" alt="Logo of USUKFF">
+            <p class="logoName"> 27. Uçan Süpürge <br> Uluslararası Kadın Filmleri <br>Festivali</p>
+            <a href="LaChimeraEn" onclick="changeLanguage('en')">
+                <section class="langbox center">
+                    <img src="visuals/english_flag.png" width="24px" alt="English Flag">
+                    <p class="lang">En</p>
+                </section>
+            </a>
+        </section>
+
+    </article>
+</body>
+<script async>
+    window.addEventListener("DOMContentLoaded", () => {
+            const starRating = new StarRating("form");
+        });
+
+        class StarRating {
+            constructor(qs) {
+                this.ratings = [
+                    { id: 1, name: "Terrible" },
+                    { id: 2, name: "Bad" },
+                    { id: 3, name: "OK" },
+                    { id: 4, name: "Good" },
+                    { id: 5, name: "Excellent" }
+                ];
+                this.rating = null;
+                this.el = document.querySelector(qs);
+
+                this.init();
+            }
+            init() {
+                this.el?.addEventListener("change", this.updateRating.bind(this));
+
+                // stop Firefox from preserving form data between refreshes
+                try {
+                    this.el?.reset();
+                } catch (err) {
+                    console.error("Element isn’t a form.");
+                }
+            }
+            updateRating(e) {
+                // clear animation delays
+                Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach(el => {
+                    el.className = "rating__label";
+                });
+
+                const ratingObject = this.ratings.find(r => r.id === +e.target.value);
+                const prevRatingID = this.rating?.id || 0;
+
+                let delay = 0;
+                this.rating = ratingObject;
+                this.ratings.forEach(rating => {
+                    const { id } = rating;
+
+                    // add the delays
+                    const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
+
+                    if (id > prevRatingID + 1 && id <= this.rating.id) {
+                        ++delay;
+                        ratingLabel.classList.add(`rating__label--delay${delay}`);
+                    }
+
+                    // hide ratings to not read, show the one to read
+                    const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
+
+                    if (this.rating.id !== id)
+                        ratingTextEl.setAttribute("hidden", true);
+                    else
+                        ratingTextEl.removeAttribute("hidden");
+                });
+            }
+        }
+    window.onhashchange = function () {
+            document.getElementById("textArea").blur();
+    }
+</script>
+</html>
