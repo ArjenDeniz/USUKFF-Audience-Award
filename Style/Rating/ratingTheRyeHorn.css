@@ -1,0 +1,477 @@
+@keyframes starRing {
+  from,
+    20% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(0); }
+  35% {
+    animation-timing-function: ease-out;
+    opacity: 0.5;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(1); }
+  50%,
+    to {
+    opacity: 0;
+    r: 16px;
+    stroke-width: 0;
+    transform: scale(1); } }
+@keyframes starFill {
+  from,
+    40% {
+    animation-timing-function: ease-out;
+    transform: scale(0); }
+  60% {
+    animation-timing-function: ease-in-out;
+    transform: scale(1.2); }
+  80% {
+    transform: scale(0.9); }
+  to {
+    transform: scale(1); } }
+@keyframes starStroke {
+  from {
+    transform: scale(1); }
+  20%,
+    to {
+    transform: scale(0); } }
+@keyframes starLine {
+  from,
+    40% {
+    animation-timing-function: ease-out;
+    stroke-dasharray: 1 23;
+    stroke-dashoffset: 1; }
+  60%,
+    to {
+    stroke-dasharray: 12 13;
+    stroke-dashoffset: -13; } }
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+  to {
+    bottom: 30px;
+    opacity: 1; } }
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1; }
+  to {
+    bottom: 0;
+    opacity: 0; } }
+/* general settings */
+/* line 2, _main.scss */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300; }
+
+/* line 11, _main.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; }
+
+/* line 17, _main.scss */
+form {
+  width: 90%; }
+
+/* line 21, _main.scss */
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+/* line 26, _main.scss */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 32, _main.scss */
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+/* line 38, _main.scss */
+.background {
+  height: 100%;
+  background-image: url("../../visuals/TheRyeHorn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+/*card with gray background*/
+/* line 47, _main.scss */
+.formbox {
+  max-width: 600px;
+  padding: 1% 0.1rem;
+  border-radius: 10%;
+  background-color: #E2E3E7; }
+
+/*title and director*/
+/* line 55, _main.scss */
+.titlebox {
+  margin: 2%;
+  padding: 1%;
+  text-align: center; }
+  /* line 59, _main.scss */
+  .titlebox .title {
+    font-size: 1.5rem;
+    font-weight: 400; }
+
+/* line 65, _main.scss */
+.line {
+  height: 1px;
+  background-color: #6c6e3f;
+  width: 75%;
+  margin: 2% auto;
+  align-self: center; }
+
+/*comment box*/
+/* line 74, _main.scss */
+.commentbox {
+  margin-top: 7%;
+  width: 75%; }
+  /* line 77, _main.scss */
+  .commentbox .comment {
+    background-color: #fff;
+    padding-left: 0.5rem;
+    border: 1px solid #6c6e3f;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    outline: none;
+    overflow: hidden;
+    resize: none;
+    transition: height 0.3s ease;
+    position: relative; }
+    /* line 90, _main.scss */
+    .commentbox .comment::placeholder {
+      position: absolute;
+      top: 25%;
+      left: 0%;
+      padding: 0 0.5rem; }
+    /* line 96, _main.scss */
+    .commentbox .comment:focus {
+      height: 300px; }
+      /* line 98, _main.scss */
+      .commentbox .comment:focus::placeholder {
+        top: 1%; }
+  /* line 106, _main.scss */
+  .commentbox .icon {
+    margin-right: 1.5%;
+    color: #6c6e3f;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 1.5rem; }
+
+/* line 114, _main.scss */
+.commentbox:focus-within .icon {
+  display: none; }
+
+/*button design*/
+/* line 119, _main.scss */
+.buttonbox {
+  margin: 0.8rem 0; }
+  /* line 121, _main.scss */
+  .buttonbox .button {
+    padding: 0.5rem;
+    border-radius: 20px;
+    background: #6c6e3f;
+    text-transform: capitalize;
+    font-weight: 400;
+    outline: 0;
+    bottom: 0;
+    transition: 0.2s;
+    width: 50%;
+    max-width: 350px; }
+    /* line 132, _main.scss */
+    .buttonbox .button:hover, .buttonbox .button:active {
+      background: #8c8e52;
+      transform: scale(1.05);
+      transition: 0.3s; }
+
+/*logo footer*/
+/* line 145, _main.scss */
+.logo {
+  width: 75%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-around;
+  /*language option*/ }
+  /* line 150, _main.scss */
+  .logo .logoImg {
+    width: 15%; }
+  /* line 153, _main.scss */
+  .logo .logoName {
+    font-size: 0.6rem;
+    color: #552261;
+    text-align: center; }
+  /* line 159, _main.scss */
+  .logo .langbox {
+    padding: 0.2rem;
+    background-color: #6c6e3f;
+    border-radius: 10px;
+    gap: 3px; }
+  /* line 166, _main.scss */
+  .logo .lang {
+    font-size: 1rem; }
+
+/* line 171, _main.scss */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  background-color: green; }
+
+/* line 187, _main.scss */
+.toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+/*background image trick for small screens*/
+/* line 197, _main.scss */
+.smallImage {
+  display: none; }
+
+/* line 2, _stars.scss */
+.rating {
+  margin: auto; }
+  /* line 5, _stars.scss */
+  .rating__display {
+    font-weight: 400;
+    min-height: 1.2rem;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.2rem; }
+  /* line 15, _stars.scss */
+  .rating__stars {
+    display: flex;
+    padding-bottom: 0.2rem;
+    position: relative; }
+  /* line 21, _stars.scss */
+  .rating__star {
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+    width: 3rem;
+    height: 3rem; }
+    /* line 28, _stars.scss */
+    .rating__star-ring, .rating__star-fill, .rating__star-line, .rating__star-stroke {
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards; }
+    /* line 37, _stars.scss */
+    .rating__star-ring, .rating__star-fill, .rating__star-line {
+      stroke: #7AA5AD; }
+    /* line 43, _stars.scss */
+    .rating__star-fill {
+      fill: #7AA5AD;
+      transform: scale(0);
+      transition: fill 0.3s cubic-bezier(0.42, 0, 0.58, 1), transform 0.3s cubic-bezier(0.42, 0, 0.58, 1); }
+    /* line 51, _stars.scss */
+    .rating__star-line {
+      stroke-dasharray: 12 13;
+      stroke-dashoffset: -13; }
+    /* line 56, _stars.scss */
+    .rating__star-stroke {
+      stroke: #7AA5AD;
+      transition: stroke 0.3s; }
+  /* line 62, _stars.scss */
+  .rating__label {
+    cursor: pointer;
+    padding: 0.25rem; }
+  /* line 69, _stars.scss */
+  .rating__label--delay1 .rating__star-ring, .rating__label--delay1 .rating__star-fill, .rating__label--delay1 .rating__star-line, .rating__label--delay1 .rating__star-stroke {
+    animation-delay: 0.05s; }
+  /* line 69, _stars.scss */
+  .rating__label--delay2 .rating__star-ring, .rating__label--delay2 .rating__star-fill, .rating__label--delay2 .rating__star-line, .rating__label--delay2 .rating__star-stroke {
+    animation-delay: 0.1s; }
+  /* line 69, _stars.scss */
+  .rating__label--delay3 .rating__star-ring, .rating__label--delay3 .rating__star-fill, .rating__label--delay3 .rating__star-line, .rating__label--delay3 .rating__star-stroke {
+    animation-delay: 0.15s; }
+  /* line 69, _stars.scss */
+  .rating__label--delay4 .rating__star-ring, .rating__label--delay4 .rating__star-fill, .rating__label--delay4 .rating__star-line, .rating__label--delay4 .rating__star-stroke {
+    animation-delay: 0.2s; }
+  /* line 77, _stars.scss */
+  .rating__input {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none; }
+  /* line 84, _stars.scss */
+  .rating__input:hover ~ [data-rating]:not([hidden]) {
+    display: none; }
+  /* line 88, _stars.scss */
+  .rating__input-1:hover ~ [data-rating="1"][hidden], .rating__input-2:hover ~ [data-rating="2"][hidden], .rating__input-3:hover ~ [data-rating="3"][hidden], .rating__input-4:hover ~ [data-rating="4"][hidden], .rating__input-5:hover ~ [data-rating="5"][hidden], .rating__input:checked:hover ~ [data-rating]:not([hidden]) {
+    display: block; }
+  /* line 98, _stars.scss */
+  .rating__input-1:hover ~ .rating__label:first-of-type .rating__star-stroke, .rating__input-2:hover ~ .rating__label:nth-of-type(-n + 2) .rating__star-stroke, .rating__input-3:hover ~ .rating__label:nth-of-type(-n + 3) .rating__star-stroke, .rating__input-4:hover ~ .rating__label:nth-of-type(-n + 4) .rating__star-stroke, .rating__input-5:hover ~ .rating__label:nth-of-type(-n + 5) .rating__star-stroke {
+    stroke: #7AA5AD;
+    transform: scale(1); }
+  /* line 107, _stars.scss */
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-ring, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-ring, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-ring, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-ring, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-ring {
+    animation-name: starRing; }
+  /* line 115, _stars.scss */
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-stroke, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-stroke, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-stroke, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-stroke, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-stroke {
+    animation-name: starStroke; }
+  /* line 123, _stars.scss */
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-line, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-line, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-line, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-line, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-line {
+    animation-name: starLine; }
+  /* line 131, _stars.scss */
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-fill, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-fill, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-fill, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-fill, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-fill {
+    animation-name: starFill; }
+  /* line 139, _stars.scss */
+  .rating__input-1:not(:checked):hover ~ .rating__label:first-of-type .rating__star-fill, .rating__input-2:not(:checked):hover ~ .rating__label:nth-of-type(2) .rating__star-fill, .rating__input-3:not(:checked):hover ~ .rating__label:nth-of-type(3) .rating__star-fill, .rating__input-4:not(:checked):hover ~ .rating__label:nth-of-type(4) .rating__star-fill, .rating__input-5:not(:checked):hover ~ .rating__label:nth-of-type(5) .rating__star-fill {
+    fill: #7AA5AD; }
+  /* line 148, _stars.scss */
+  .rating__sr {
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px; }
+
+@media screen and (max-width: 600px) {
+  /* line 3, _small.scss */
+  * {
+    font-size: 1.1rem; }
+
+  /* line 6, _small.scss */
+  .background {
+    background-image: none;
+    display: flex; }
+
+  /* line 11, _small.scss */
+  .formbox {
+    border-radius: 50px 50px 0 0;
+    width: 100%;
+    max-height: 50%;
+    z-index: 2;
+    max-width: 100%;
+    margin-top: -40px;
+    justify-self: flex-end; }
+
+  /* line 21, _small.scss */
+  .titlebox .title {
+    font-size: 1.4rem; }
+
+  /* line 27, _small.scss */
+  .commentbox .comment::placeholder {
+    font-size: 0.9rem; }
+
+  /* line 32, _small.scss */
+  .commentbox {
+    max-height: 50px;
+    margin-top: 5%; }
+    /* line 35, _small.scss */
+    .commentbox .comment {
+      transition: height 0.01s ease; }
+
+  /* line 39, _small.scss */
+  .formbox:focus-within {
+    height: auto;
+    max-height: 100%; }
+
+  /* line 43, _small.scss */
+  .commentbox:focus-within {
+    min-height: 300px; }
+
+  /* line 47, _small.scss */
+  .comment:focus {
+    height: 300px !important; }
+
+  /* line 50, _small.scss */
+  .line {
+    margin: 0.1rem auto;
+    min-height: 1px; }
+
+  /* line 54, _small.scss */
+  .smallImage {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    height: 50%;
+    background-image: url("../../visuals/varda.jpeg");
+    background-position: center;
+    background-size: cover; }
+
+  /* line 64, _small.scss */
+  .rating__star {
+    width: 2.5rem; }
+
+  /* line 67, _small.scss */
+  .logo {
+    margin: 1% 0; }
+
+  /* line 70, _small.scss */
+  .buttonbox {
+    margin: 0.5rem 0; }
+    /* line 73, _small.scss */
+    .buttonbox .button {
+      font-size: 0.9rem;
+      padding: 0.25rem; }
+
+  /* line 78, _small.scss */
+  .rating__display {
+    top: 75%; } }
+@media screen and (max-width: 400px) {
+  /* line 3, _extraSmall.scss */
+  .formbox {
+    border-radius: 30px 30px 0 0;
+    padding: 2% 0.1rem;
+    max-height: 60%;
+    margin-top: -30px; }
+
+  /* line 9, _extraSmall.scss */
+  .rating__star {
+    width: 2rem; }
+
+  /* line 13, _extraSmall.scss */
+  .titlebox {
+    margin: 0px; }
+    /* line 15, _extraSmall.scss */
+    .titlebox .title {
+      font-size: 1.2rem; }
+    /* line 18, _extraSmall.scss */
+    .titlebox .director {
+      font-size: 0.9rem; }
+
+  /* line 22, _extraSmall.scss */
+  .commentbox {
+    margin-top: 0.4rem; }
+
+  /* line 27, _extraSmall.scss */
+  .commentbox {
+    max-height: 30px; }
+    /* line 30, _extraSmall.scss */
+    .commentbox .comment::placeholder {
+      font-size: 0.7rem; }
+
+  /* line 36, _extraSmall.scss */
+  .rating__display {
+    font-size: 0.9rem; } }
+@media screen and (max-width: 330px) {
+  /* line 45, _extraSmall.scss */
+  .commentbox .comment::placeholder {
+    top: 10%; } }
+
+/*# sourceMappingURL=ratingTheRyeHorn.css.map */
