@@ -12,50 +12,24 @@
     <title>USUKFF - Seyirci Ödülü</title>
     <link rel="icon" type="image/png" sizes="32x32" href="visuals/usukff_logo.png">
     <meta name="description" content="This page is for USKUFF audience to vote for audience award">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
         var submitted = false;
-        function createCookie(name, value, days) {
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "; expires=" + date.toGMTString();
+        var in30Minutes = 1 / 48;
+        function submitForm(event) {
+            if (Cookies.get("cookie2") == "true") {
+                event.preventDefault();
+                alert("You already voted!");
+                setTimeout(function () { Cookies.remove("cookie2"); }, 360000);
+            } else {
+                Cookies.set("cookie2", "true", in30Minutes);
+                submitted = true;
             }
-            else var expires = "";
-            document.cookie = name + "=" + value + expires + "; path=/";
         }
-
-        function readCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        function eraseCookie(name) {
-            createCookie(name, "", -1);
-        }
-        function submitForm() {
-                if (document.cookie.indexOf("cookie") !== -1) {
-                    event.preventDefault();
-                    alert("Daha önce oy kullandınız.");
-                    setTimeout(function(){
-                        eraseCookie("cookie");
-                    },3600000)
-                } else {
-                    createCookie("cookie", "true", 1);
-                    submitted = true;
-                    // Submit the form
-                    // ...
-                }
-            }
     </script>
 </head>
 
-<body onload="readCookie(submitted)" class = "background column center">
+<body  class = "background column center">
 
     <div class="smallImage row">
     </div>
@@ -75,7 +49,7 @@
         <!--form-->
         <iframe name="hiddenConfirm" id="hiddenConfirm" style="display:none;" frameborder="0" onload = "if(submitted){window.location='MyFavoriteCakeTrConf.html';}"></iframe>
         <form class="form column center" action="https://docs.google.com/forms/d/e/1FAIpQLSfWEl88P4oKQLu3vSnLdzrQGeJqHjVymB_Il3rlQl5_bGXyRA/formResponse"
-            method="post" target="hiddenConfirm" onsubmit="submitForm()">
+            method="post" target="hiddenConfirm" onsubmit="submitForm(event)">
 
             <!-- stars -->
             <section class="rating__stars row center">
